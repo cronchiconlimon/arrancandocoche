@@ -1,36 +1,45 @@
 class Coche {
-    componentes(ruedas,ventanas,puertas,color){
-        this.ruedas = ruedas;
-        this.ventanas = ventanas;
-        this.puertas = puertas;
-        this.color = color;
-        this.encender = false;
+    constructor(rda,vent){
+        this.ruedas = rda;
+        this.ventanas = vent;
+        this.encendido = false;
 
     }
-    arrancar(){
-        if (this.encender == false) {
+    botonEncendido(){
+        if (this.encendido == false) {
             alert("el coche esta encendido");
-            this.encender = false;
+            this.encendido = true;
         } else {
             alert("el coche esta apagado");
-            this.encender = true;
+            this.encendido = false;
         }
     }
     
     reiniciar(){
-        if (this.encender == false) {
+        if (this.encendido == true) {
             alert("el coche se esta reiniciando");
         } else {
             alert("el coche no se puede reiniciar porque esta apagado")
         }
     }
-    ventanasCoche() {
-        alert(`el coche tiene: ${this.ventanas} + "ventanas"`)
+    
+    dimeR() {
+        alert(`ruedas que tiene: ${this.ruedas}`)
     }
+    
+    dimeV() {
+        alert(`ventanas que tiene: ${this.ventanas}`)
+    }
+
+
 }
 
-coche1 = new Coche("4 ruedas", "4 ventanas", "dos puertas", "color rojo");
+coche1 = new Coche("4","4");
 
-coche1.arrancar();
+coche1.botonEncendido();
+coche1.dimeR();
+coche1.dimeV();
 coche1.reiniciar();
+coche1.botonEncendido();
+
 
